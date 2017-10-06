@@ -1,6 +1,6 @@
 # fasttext-server
 
-Flask web server to serve supervised models trained with FastText. Edit
+Flask web server to serve supervised models trained with FastText.
 
 ## Getting Started
 
