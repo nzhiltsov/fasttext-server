@@ -1,4 +1,4 @@
-"""fasttext-server"""
+"""fasttext-server."""
 
 from flask import Flask, jsonify, request
 from pyfasttext import FastText
@@ -17,6 +17,7 @@ def info():
                     "nlabels": model.nlabels,
                     "labels": model.labels
                     })
+
 
 @app.route("/representations", methods=['POST'])
 def representations():
@@ -54,22 +55,21 @@ def neighbors():
 
     return jsonify(response)
 
+
 @app.route("/predictions", methods=['POST'])
 def predictions():
-    """Return label predictions for a sentence from the supervised model"""
+    """Return label predictions for a sentence from the supervised model."""
     text = request.get_json()["text"]
 
     prediction = model.predict_single(text, k=1)
 
-    response =  {"text": text,
+    response = {"text": text,
                 "prediction": prediction}
 
     return jsonify(response)
-
 
 
 if __name__ == "__main__":
     app.run(debug=app.config["DEBUG"],
             host=app.config["HOST"],
             port=app.config["PORT"])
-
