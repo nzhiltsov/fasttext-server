@@ -8,12 +8,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You'll need [python](http://docs.python-guide.org/en/latest/starting/installation/) + [pipenv](https://docs.pipenv.org/) installed. 
+You'll need [python](http://docs.python-guide.org/en/latest/starting/installation/) + [pipenv](https://docs.pipenv.org/) installed.
 
 ### Installing & Running
 
-* Clone the repository 
+* Clone the repository
 * Run `pipenv install`
+* Fill the config_tmpl.py file with your parameters and rename it to config.py
 * Run `python app.py`
 
 ## Deployment
